@@ -34,13 +34,13 @@ variable "enable_ecr_lifecycle_policy" {
 variable "ecr_lifecycle_untagged_expiration_days" {
   type        = number
   description = "Number of days after which untagged images expire. Only applies if enable_ecr_lifecycle_policy is true."
-  default     = 45
+  default     = 30
 }
 
 variable "ecr_lifecycle_tagged_expiration_days" {
   type        = number
-  description = "Number of days after which tagged images expire. Only applies if enable_ecr_lifecycle_policy is true."
-  default     = 90
+  description = "Number of days after which tagged images expire. Tags matching protected_tag_patterns are never expired. Only applies if enable_ecr_lifecycle_policy is true."
+  default     = 30
 }
 
 variable "ecr_lifecycle_policy_excluded_repositories" {
